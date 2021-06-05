@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+:root{
+    --primaryColor : #3a0ca3;
+    --secondaryColor : #7209b7;
+    --fontColor : rgba(255, 255, 255, 0.753);
+    --background :linear-gradient(145deg, #3e0dae, #340b93);
+
+    --neuBoxShadow : 5px 5px 16px #220760,
+    -5px -5px 16px #5211e6;
+
+    --neuBoxShadowInset : inset 5px 5px 16px #220760,
+    inset -5px -5px 16px #5211e6;
+
+    --neuBoxShadowBulged : 5px 5px 16px #220760,
+    -5px -5px 16px #5211e6;
+
+    --borderRadius : 2em;
+
+    --fontSize : 2em;
+}
+
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right bottom, var(--primaryColor),var(--secondaryColor));
+}
+
+main{
+    width: 60em;
+    height: 40em;
+    border-radius: 2em;
+    box-shadow: var(--neuBoxShadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: var(--background);
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    height: 80%;
+    width: 30%;
+    /* border : 1px solid white; */
+}
+
+.top,.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 40%;
+    background-image: var(--background);
+    /* border: 1px solid white; */
+}
+
+.left,.right{
+    box-shadow: var(--neuBoxShadowBulged);
+    border-radius: var(--borderRadius);
+}
+
+.btn{
+    width: 90%;
+    height: 12%;
+    border-radius: calc(var(--borderRadius) - 1em);
+    border: none;
+    box-shadow: var(--neuBoxShadowBulged);
+    background-image: var(--background);
+    color : var(--fontColor);
+    font-size: calc(var(--fontSize) - .2em);
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    cursor: pointer;
+    text-align: center;
+    outline : 0;
+}
+
+.btn:hover{
+    color : #fff;
+    box-shadow: 12px 5px 16px #220760,
+    -12px -5px 16px #5211e6;
+}
+
+.btn:active>span{
+    font-size: 1.2em;
+}
+
+.btn:active{
+    box-shadow: var(--neuBoxShadowInset);
+    font-size: 1.7em;
+}
+
+h3{
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    font-size: var(--fontSize) ;
+    color: var(--fontColor);
+    letter-spacing: 2px;
+}
+
+.hint{
+    margin-bottom: 2em;
+    font-weight: 500;
+}
+
+.big{
+    font-weight: 300;
+    font-size: 7em;
+}
+
+.playdice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+    width: 30%;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+.dice{
+    width: 40%;
+    border-radius: var(--borderRadius);
+    box-shadow: 2.5px 10px 20px #220760,
+    -2.5px -10px 20px #5211e6;
+    transition: all 0.3s;
+}
+
+.active{
+    display: flex;
+    justify-content: space-evenly;
+    height: 95%;
+    border-radius: var(--borderRadius);
+    box-shadow: 2.5px 2.5px 10px #220760,
+    -2.5px -2.5px 10px #6e37ec;
+    transition: 0.3s;
+    animation: opacityin 0.5s;
+    background-color:rgba(255, 255, 255, 0.2);
+}
+
+.active > .left{
+    box-shadow: none;
+}
+
+.active > .right{
+    box-shadow: none;
+}
+
+@keyframes opacityin{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.roll{
+    animation: roll 0.3s;
+}
+
+@keyframes roll{
+    0% { 
+        opacity: 0; 
+        transform: translateX(-60%) rotate(-200deg); 
+     }
+     20%{
+        opacity: .2;
+        transform: translateX(-40%) rotate(-100deg);
+    }
+     40%{
+         opacity: .8;
+         transform: translateX(20%) rotate(-80deg);
+     }
+     100% { 
+        opacity: 1; 
+        transform: translateX(0px) rotate(0deg); 
+     }
+}
+
+span{
+    font-size: 1.3em ;
+}
+
+@media only screen and (max-width : 900px) {
+
+    :root{
+        --fontSize: 1.3em;
+    }
+
+    main{
+        width: 40em;
+        height: 30em;
+    }
+
+    .big{
+        font-size: 5em;
+    }
+
+    .btn{
+        width: 100%;
+        font-size: calc(var(--fontSize));
+    }
+
+}
+
+
+
+
+

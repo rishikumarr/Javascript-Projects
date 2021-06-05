@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --primaryBC : #1E2022;
+    --secondaryBC : #22262F;
+    --primaryFC : #e0e0e0;
+    --iconsOp : rgba(224, 224, 224,0.6);
+    --smallFS : 1.5em;
+    --mediumFS : 1.8em;
+    --largeFS : 2.5em;
+    --testing : 1px solid white;
+    --borderRa1 : 2em;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #2B3AF6;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-size: 2.5em;
+    font-weight: 400;
+}
+
+I{
+    font-size: 2em;
+    color :var(--iconsOp);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+I:hover{
+    color : #e0e0e0;
+}
+
+.sm{
+    font-size: 1.8em;
+}
+
+p{
+    font-size: var(--smallFS);
+    color : var(--primaryFC);
+}
+
+::selection{
+    color: white;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primaryBC);
+    width: 40em;
+    height: 60em;
+    border-radius: var(--borderRa1);
+    box-shadow: 10px 20px 25px rgba(0, 0, 0, .2);
+}
+
+.container{
+    margin : 2em;
+    /* border : var(--testing); */
+    width: 90%;
+    height: 90%;
+    border-radius: calc(var(--borderRa1)/2);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    color : var(--primaryFC);
+}
+
+::-webkit-scrollbar{
+    display: none;
+    visibility: hidden;
+}
+
+.top{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border :var(--testing); */
+    width: 100%;
+    height: 10%;
+}
+
+@keyframes fadein{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.contacts{
+    height: 90%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.list{
+    --dflex : flex;
+    --flexDir : column;
+    --flexalign : center;
+    --flexjustifySb : space-between;
+    --flexgap : 1em; 
+    --maxwidth : 100%;
+    --minwidth : 70%;
+    --flexpad : 1em;
+    --minheight : 8em;
+    --maxheight : 100%;
+}
+
+.contacts{
+    display: var(--dflex);
+    flex-direction: var(--flexDir);
+    align-items: var(--flexalign);
+    gap: var(--flexgap);
+}
+
+.list .contact{
+    display: var(--dflex);
+    align-items: var(--flexalign);
+    justify-content: var(--flexjustifySb);
+    width: var(--maxwidth);
+    padding: var(--flexpad);
+    height: var(--minheight);
+    /* border : var(--testing); */
+    background-color: var(--secondaryBC);
+    border-radius: calc(var(--borderRa1)/2);
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: movein 0.5s linear forwards;
+    transition: 0.5s;
+    margin: 1em 0;
+}
+
+.list .contact:nth-child(1){
+    margin-top :0;
+}
+
+.list .contact__left{
+    display: var(--dflex);
+    width: var(--minwidth);
+    height: var(--maxwidth);
+    align-items : var(--flexalign);
+}
+
+.grid{
+    --dgrid : grid;
+    --gridTc1 : 1fr 1fr;
+    --gridTr1 : repeat(4,13em);
+    --gridgap : 1em;
+    --gridpad : 1em;
+    --gridTc2 : 85% 15%;
+}
+
+.contacts{
+    display: var(--dgrid);
+    grid-template-columns: var(--gridTc1);
+    grid-template-rows: var(--gridTr1);
+    grid-gap: var(--gridgap);
+}
+
+.grid .contact{
+    display: var(--dgrid);
+    grid-template-columns: var(--gridTc2);
+    padding: var(--gridgap);
+    transform: translateX(-100%);
+    opacity: 0;
+    border-radius: calc(var(--borderRa1)/2);
+    background-color: var(--secondaryBC);
+    animation: movein 0.5s linear forwards;
+    transition: 0.5s;
+}
+
+@keyframes movein{
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+img{
+    height: 5em;
+    width: 5em;
+    margin-right: 1.5em;
+}
+
+.contact__left__details__name{
+    font-size: var(--mediumFS);
+    font-weight: 300;
+}
+
+.contact__left__details__phone{
+    font-size: var(--smallFS);
+    font-weight: 200;
+}
+
+.contact:nth-child(2){
+    animation-delay: 0.1s;
+}
+
+.contact:nth-child(3){
+    animation-delay: 0.2s;
+}
+
+.contact:nth-child(4){
+    animation-delay: 0.3s;
+}
+
+.contact:nth-child(5){
+    animation-delay: 0.4s;
+}
+
+.contact:nth-child(6){
+    animation-delay: 0.5s;
+}
+
+.contact:nth-child(7){
+    animation-delay: 0.6s;
+}
+
+
+
+
+

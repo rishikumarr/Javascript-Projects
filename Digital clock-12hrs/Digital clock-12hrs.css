@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --blue : #2b3af6;
+    --blackprimary : #1e2022;
+    /* --blackprimary: rgba(30, 32, 34,0.9); */
+    /* --blacksecondary : rgba(34, 38, 47,0.9); */
+    --blacksecondary : #22262f;
+    --fc : rgba(224, 224, 224,0.9);
+    --fs : 3.8em;
+    --sfs : 2em;
+    --testing : 1px solid #e0e0e0;
+    --orange : #f48c06;
+    --gap : .5em;
+    --widthEm : 45em;
+    --heightEm : 8em;
+    --widthPercentage : 30%;
+    --heightPercentage : 85%;
+    --padding : 1em; 
+    --borderRad1 : 1em;
+    --blackOpacity : rgba(0,0,0,0.5);
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid{
+    display : grid;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: 23.5% 27.5% 27.5% 15%;
+    grid-template-rows: 100%;
+}
+
+body{
+    background-color: var(--blue);
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    color : var(--fc);
+}
+
+.container{
+    width: var(--widthEm);
+    height: var(--heightEm);
+    background-color: var(--blackprimary);
+    border-radius: var(--borderRad1);
+    box-shadow: 0px 10px 20px var(--blackOpacity);
+    /* border : var(--testing); */
+}
+
+.wrapper{
+    /* border : var(--testing); */
+    height: var(--heightPercentage);
+    border-radius: calc(var(--borderRad1)/2);
+    box-shadow: inset 0px 0px 20px var(--blackOpacity);
+    padding : 0 .4em 0 .4em;
+    gap : var(--gap);
+}
+
+span{
+    /* border :var(--testing); */
+    height: 90%;
+}
+
+.normal{
+    color : var(--fc);
+    font-size: var(--fs);
+    width: 50%;
+}
+
+.glowing{
+    width: 48%;
+    font-size: var(--sfs);
+    color : var(--orange);
+    text-shadow: 0 0 5px var(--orange);
+    justify-content: flex-start;
+}
+
+.ampm{
+    width: 95%;
+    font-size: calc(var(--fs) - .5em);
+}
+
+@media only screen and (max-width : 700px){
+    :root{
+        --widthEm: 35em;
+        --heightEm : 6em;
+        --fs : 3em;
+        --sfs : 1.5em;
+    }
+}

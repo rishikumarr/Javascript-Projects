@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Roll Dice.css">
+    <title>Dice</title>
+</head>
+<body>
+    <h3 class='hint'>Lets see who reaches 30 first..</h3>
+    <main>
+        <!-- Left Side - Player 1 -->
+        <section class='player player--1 active'>
+
+            <div class='top left'>
+                <h3>PLAYER 1</h3>
+                <h3 class='overallscore1 big'>0</h3>
+            </div>
+
+            <div class="bottom left">
+                <h3>CURRENT</h3>
+                <h3 class='addedup1 big'>0</h3>
+            </div>
+
+        </section>
+        <!-- Middle Section  -->
+        <section class='playdice'>
+
+                <button class='btn newgame'>NEW GAME <span>&olarr;</span></button>
+
+                <img class="dice" src="https://raw.githubusercontent.com/rishikumarr/images/main/dice/dice-6.png">
+
+                <button class="btn rolldice">ROLL DICE <span>&rarrc;</span></button>
+                <button class="btn hold">HOLD <span>&nvrArr;</span></button>
+
+        </section>
+
+        <!-- Right Side - Player 2 -->
+        <section class='player player--2'>
+
+            <div class='top right'>
+                <h3>PLAYER 2</h3>
+                <h3 class='overallscore2 big'>0</h3>
+            </div>
+
+            <div class="bottom right">
+                <h3>CURRENT</h3>
+                <h3 class='addedup2 big'>0</h3>
+            </div>
+
+        </section>
+        
+    </main>
+    <script src="Roll Dice.js"></script>
+</body>
+</html>

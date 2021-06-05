@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Widget.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+    </script>
+
+    <script defer src="Widget.js"></script>
+    <title>Clocks</title>
+</head>
+<body class='flex'>
+    <main class='big'>
+
+        <section class="greet flex">
+            <h3 class='greetuser'>Good <span class='time'>Afternoon</span></h3><form action="" class='usernameinput'><input type="text" maxlength="7" class='username'></form>
+        </section>
+
+        <section class="weather">
+            <div class="left flex">
+                <div class="weather-reading light">
+                    <h3 class='light'>91° <span>F</span> | <span>C</span></h3>
+                </div>
+                <div class="howisweather">
+                    <h3 class=' bordertop light'>Sunny</h3>
+                </div>
+            </div>
+            <img src="https://raw.githubusercontent.com/rishikumarr/images/main/weather/sun.svg" alt="" class="weatherimage">
+            <div class="date light">May 10 / 2020</div>
+        </section>
+
+        <section class="clock flex">
+            <div class="clockdisplay flex" >
+                <div class="container hidden" data-digitalclock>
+                    
+                    <div class="wrapper flex">
+                        <span class="normal flex span" data-digi-hour>12</span>
+                        <span class="glowing flex span" data-hour-glow>hr's</span>
+                    </div> 
+                    
+                    <div class="wrapper flex">
+                        <span class="normal flex span" data-digi-minute>02</span>
+                        <span class="glowing flex span" data-minute-glow>min's</span>
+                    </div>
+                    
+                    <div class="wrapper flex">
+                        <span class="normal flex span" data-digi-second>10</span>
+                        <span class="glowing flex span" data-second-glow>sec's</span>
+                    </div>
+                    
+                    <div class="wrapper flex">
+                        <span class="flex ampm" data-digi-amPm>AM</span>
+                    </div>
+                    
+                </div>
+                <div class="clockcontainer" data-analogclock>
+                    <div class="minute hand" data-minute></div>
+                    <div class="hour hand" data-hour></div>
+                    <div class="second hand" data-second></div>
+            
+                    <div class="number number1">.</div>
+                    <div class="number number2">.</div>
+                    <div class="number number3">.</div>
+                    <div class="number number4">.</div>
+                    <div class="number number5">.</div>
+                    <div class="number number6">.</div>
+                    <div class="number number7">.</div>
+                    <div class="number number8">.</div>
+                    <div class="number number9">.</div>
+                    <div class="number number10">.</div>
+                    <div class="number number11">.</div>
+                    <div class="number number12">.</div>
+                </div>
+            </div>
+            <div class="clockbottom flex">
+                <div class="toggle flex analog" data-clocktoggle>
+                    <h3 class='clocktype light'>Digital Clock</h3>
+                    <span>|</span>
+                    <h3 class='clocktype light'>Analog Clock</h3>
+                </div>
+                <button class='palette'>&uarr;</button>
+            </div>
+            <div class="palettes">
+                <span class="color lightblue" id="#90E0EF"></span>
+                <span class="color pink" id="#ff7096"></span>
+                <span class="color orange" id="#f48c06"></span>
+                <span class="color yellow" id="#ffd60a"></span>
+            </div>
+        </section>
+
+        <section class="map flex">
+            <div class="mapimg blur" id='map'></div>
+        </section>
+
+        <section class="focus large">
+            <form action="" class='form'data-form>
+                <label for="focusinput">What is your main focus for today ?</label>
+                <input type="text" id="focusinput" autocomplete="off">
+            </form>
+                
+        </section>
+    </main>
+   <template data-focus>
+    <input type="checkbox" name="" id="iscomplete">
+    <label for="iscomplete">Upload snaps to dribbble</label>
+    <button class='deletecompleted '>&Cross;</button>
+   </template>
+</body>
+</html>
+

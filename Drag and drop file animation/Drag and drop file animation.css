@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+*,*::after,*::before{
+    padding : 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark : #0096c7;
+    --light : #00b4d8;
+    --bodyBackground : #caf0f8;
+    --containerBackground : #90e0ef;
+    --testing : 1px solid black;
+    --folderWidth : 13em;
+    --folderHeight : 10em;
+    --borderRad1 : 3em;
+    --borderRad2 : 1.5em;
+    --borderRad3 : 1em;
+    --paperColor :rgba(224, 224, 224,0.5);
+    --arrowColor : rgba(224,224,224,0.8);
+    --transition : 0.3s;
+    --insetShadow :inset 0px 0px 10px rgba(0,0,0,0.6);
+    --gap : 1em;
+    --fontSizeLarge : 2em;
+    --fontSizeMedium : 1.5em;
+    --padding :4em;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-color: var(--bodyBackground);
+    width: 100%;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color : var(--dark);
+    flex-direction: column;
+    gap: 4em;
+}
+
+.container{
+    width: 60%;
+    max-width: 50em;
+    min-width: 35em;
+    height: 40em;
+    min-height: 35em;
+    background-color: var(--containerBackground);
+    border-radius: var(--borderRad3);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+    padding : var(--padding);
+}
+
+.subcontainer{
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border : 4px dashed var(--dark);
+    border-radius: var(--borderRad3);
+}
+
+.folder{
+    width: var(--folderWidth);
+    height: var(--folderHeight);
+    background-color: var(--dark);
+    border-radius: var(--borderRad2);
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+    /* border : var(--testing); */
+}
+
+.open{
+    transition: var(--transition);
+}
+
+.folder .open{
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+}
+
+.open .folder-front{
+    transform:skew(-8deg) scaleY(.9) translateY(12px) translateX(2%);
+}
+
+.folder::before{
+    content: "";
+    position: absolute;
+    height: 2.5em;
+    width: 5em;
+    top:-10%;
+    left :0;
+    background-color: var(--dark);
+    /* border :var(--testing); */
+    border-radius: 1em 1em 0 0;
+    transition: var(--transition);
+}
+
+.folder-front{
+    width: var(--folderWidth);
+    height: calc(var(--folderHeight) - 1em);
+    background-color: var(--light);
+    /* border : var(--testing); */
+    border-radius: 1.5em 1.5em 1em 1em;
+    transform: translateY(15%);
+    transform-origin: bottom;
+    transition: var(--transition);
+    position: relative;
+}
+
+#cloud{
+    position: absolute;
+    top : 58%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    font-size: calc(var(--fontSizeLarge) + 2em);
+    /* border : var(--testing); */
+    transform-origin: bottom;
+    color : var(--dark);
+    transition: var(--transition);
+}
+
+.uploaded #uploading{
+    display: none;
+}
+
+.uploaded #cloud{
+    color : rgba(224,224,224,0.8);
+}
+
+.upload,.uploaded{
+    transition: var(--transition);
+}
+
+
+.upload #uploading{
+    position: absolute;
+    font-size: calc(var(--fontSizeLarge) + 3em);
+    bottom : 0;
+    left : 42%;
+    transform : translateY(80%);
+    color : var(--arrowColor);
+    transition: var(--transition);
+    animation: uploading 0.6s ease-in-out 0.1s infinite;
+    opacity: 0;
+}
+
+@keyframes uploading{
+    to{
+        transform: translateY(5%);
+        opacity: 1;
+    }
+}
+
+.open #cloud{
+    left : 55%;
+    transform: translateX(10%,60%);
+}
+
+
+.paper{
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    left : 50%;
+    background-color: var(--paperColor);
+    /* background-color: rgba(255, 98, 0, 0.2); */
+    border-radius: var(--borderRad3) ;
+    transform: translateX(-50%) skew(-2deg) translateY(20%);
+    transition: var(--transition);
+}
+
+.open .one{
+    transform: translateX(-50%) skew(-2deg) translateY(4px);
+}
+
+.open .two{
+    transform: translateX(-47%) skew(-4deg) translateY(7px);
+}
+
+.open .three{
+    transform: translateX(-44%) skew(-6deg) translateY(12px);
+}
+
+.firstdiv{
+    flex : 6;
+    width: 100%;
+    /* border : var(--testing); */
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    /* border : var(--testing); */
+    flex : 3;
+    transition: var(--transition);
+}
+
+.heading{
+    font-size: var(--fontSizeLarge);
+    font-weight: 500;
+    justify-self: flex-start;
+}
+
+.description p{
+    font-size: var(--fontSizeMedium);
+    margin-bottom: 1.5em;
+}
+
+.bottom{
+    position: relative;
+    text-align: center;
+}
+
+button{
+    background-color: var(--dark);
+    border-radius: .5em;
+    border : none;
+    cursor: pointer;
+    color : var(--bodyBackground);
+    font-size: 1em;
+    padding : .2em .8em;
+    transition: var(--transition);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+
+button:enabled:hover{
+    transform: scale(1.08);
+}
+
+button:enabled:focus{
+    outline: none;
+}
+
+button:enabled:active{
+    transform: scale(0.98);
+}
+
+button:disabled{
+    cursor : not-allowed;
+}
+
+
+.dribbble{
+    width: 10em;
+    height: 2em;
+    /* border : var(--testing); */
+}
+
+.dribbble img{
+    width: 100%;
+    height: 100%;
+    /* border: var(--testing); */
+    flex : 2;
+    filter : drop-shadow(0px 4px 8px rgba(0,0,0,0.2));
+    cursor: pointer;
+}
+
+.dribbble a{
+    flex : 5;
+    font-size: var(--fontSizeMedium);
+    text-decoration: none;
+    color : var(--dark);
+    text-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    white-space : nowrap;
+}
+
+@media only screen and (max-width:700px){
+    :root{
+        --folderWidth : 10em;
+        --folderHeight :8em;
+        --fontSizeLarge : 1.6em;
+        --fontSizeMedium : 1.5em;
+        --padding : 2.5em;
+    }
+}
+
+@media only screen and (max-height:640px){
+    :root{
+        --folderWidth : 10em;
+        --folderHeight :8em;
+        --fontSizeLarge : 1.6em;
+        --fontSizeMedium : 1.5em;
+        --padding : 2.5em;
+    }
+}
+
+
+

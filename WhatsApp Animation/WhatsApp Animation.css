@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+*,*::after,*::before{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root{
+    --bodyBackground : #128C7E;
+    --borderRad1 : 3em;
+    --borderRad2 : 1em;
+    --fontSizeMedium : 2em;
+    --fontSizeLarge : 2.8em;
+    --testing : 1px solid black;
+    --white : #fff;
+    --gray : #919191;
+    --hoverColor : rgba(221, 218, 218, 0.8);
+    --documentDark : #5157ad;
+    --documentLight : #5f66cd;
+    --cameraDark : #d3396d ;
+    --cameraLight : #ec407a;
+    --galleryDark : #ac44cf;
+    --galleryLight : #bf59cf;
+    --contactDark : #3495db;
+    --contactLight : #3cacf4;
+    --locationDark : #14746f;
+    --locationLight : #248277;
+    --headphoneDark : #e46d05;
+    --headphoneLight : #ff8500;
+    --boxShadow : 0px 0px 20px rgba(0,0,0,0.3);
+    --transition1 : 0.3s;
+    --transition2 : 0.5s;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--bodyBackground);
+}
+
+
+.container{
+    width: 35em;
+    height: 6em;
+}
+
+.messagebox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    height: 80%;
+    background-color: var(--white);
+    border-radius: var(--borderRad1);
+    color : var(--gray);
+    box-shadow: var(--boxShadow);
+    padding : 1em;
+    transition : var(--transition2)
+}
+
+.icon{
+    font-size: var(--fontSizeMedium);
+    padding : .4em .5em;
+    /* border : var(--testing); */
+    border-radius: 50%;
+    cursor: pointer;
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+    transition: var(--transition1);
+}
+
+.emoji{
+    font-size: calc(var(--fontSizeMedium) + .5em);
+    padding : .3em;
+}
+
+h2{
+    font-size: var(--fontSizeMedium);
+    /* border : var(--testing); */
+    margin-right: 1em;
+}
+
+.camera{
+    padding : .5em;
+}
+
+.paperclip{
+    transform: rotateZ(-90deg) translateY(10px);
+    background-color : var(--hoverColor);
+}
+
+.icon:hover{
+    background-color: var(--hoverColor);
+}
+
+.share{
+    position: absolute;
+    top : 0%;
+    right : 15%;
+    transform: translateY(-210px);
+    width: 30em;
+    height: 20em;
+    padding : 1em;
+    background-color: var(--white);
+    border-radius: var(--borderRad2);
+    box-shadow: var(--boxShadow);
+    clip-path : circle(0% at 60% 100%);
+    transition : var(--transition2) ease-in-out;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    padding : 1em 2em;
+    /* align-items: center; */
+    grid-template-columns: repeat(3,auto);
+    grid-column-gap: 1.8em;
+    grid-row-gap : 2.5em;
+    /* border : var(--testing); */
+}
+
+.share-icon{
+    text-align : center;
+    /* padding : .7em  0 0 0; */
+    display : flex;
+    align-items: center;
+    justify-content : center;
+    font-size: var(--fontSizeLarge);
+    /* border : var(--testing); */
+    border-radius: 50%;
+    color : var(--white);
+    transform-origin: bottom;
+    transform: scale(0);
+    opacity: 0;
+    transition : var(--transition2) ease-in-out;
+}
+
+.document{
+    background-image: linear-gradient(var(--documentDark)50%,var(--documentLight)50%);
+}
+
+.share-camera{
+    background-image: linear-gradient(var(--cameraDark)50%,var(--cameraLight)50%);
+}
+
+.gallery{
+    background-image: linear-gradient(var(--galleryDark)50%,var(--galleryLight)50%);
+}
+
+.headphone{
+    background-image: linear-gradient(var(--headphoneDark)50%,var(--headphoneLight)50%);
+}
+
+.location{
+    background-image: linear-gradient(var(--locationDark)50%,var(--locationLight)50%);
+}
+
+.contact{
+    background-image: linear-gradient(var(--contactDark)50%,var(--contactLight)50%);    
+}
+
+.open .share{
+    clip-path : circle(105% at 60% 100%)
+}
+
+.open .share-icon{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.open .messagebox{
+  transform : translateY(60px);
+}

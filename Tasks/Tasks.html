@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Tasks.css">
+    <title>Tasks</title>
+</head>
+<body>
+    <main>
+        <section class="top">
+            <h1>Tasks</h1>
+            <form action="" data-task-form>
+                <button class='submit'>+</button>
+                <input type="text" placeholder="Enter the task..." data-task-input="">
+            </form>
+            <hr>
+            <div class="tabs active">
+                <div class="first tab"><h3>tasks todo<span class='tobecompleted'>3</span></h3></div>
+                <div class="second tab"><h3>completed <span class='completed'>1</span></h3></div>
+            </div>
+        </section>
+
+        <section class="bottom">
+            <div class="tasks"></div>
+
+            <div class="completedtasks"></div>
+            
+        </section>
+    </main>
+
+    <template id='taskstodo'>
+        <div class="task" data-task-id>
+            <p  class='taskslabel' ></p>
+        </div>
+    </template>
+
+    <template id='completed'>
+        <div class="completedtask" data-completed-id>
+            <p class='taskcompleted' id='placeholder'>Upload Snapshots to dribble</p>
+            <button class='delete'>&Cross;</button>
+        </div>
+    </template>
+    <script src="Tasks.js"></script>
+</body>
+</html>

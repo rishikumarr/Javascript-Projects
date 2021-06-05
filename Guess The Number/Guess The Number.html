@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Guess The Number.css">
+    <title>Guess the Number</title>
+</head>
+<body>
+    <h3 class='hint'>Guess the number between 1 - 20</h3>
+    <main>
+        <!-- Top -->
+        <section class=top>
+            <a href="#" class="btn playagain">Play again <span>&olarr;</span></a>
+            <p>Score : <span class='score'>20</span></p>
+        </section>
+
+        <!-- Middle -->
+        <section class="middle">
+                <p class='message'>Start Guessing...</p>
+                <input type="number" class='userguess' title='enter your guess here' min="1" max="20">
+                <a href="#" class='btn check' title="Check"><span>🧐️</span></a>
+        </section>
+
+        <!-- Bottom -->
+        <section class='bottom'>
+            <p>HighScore : <span class='highscore'>0</span></p>
+        </section>
+
+        <!-- Modal -->
+        <section class="modal hidden">
+            <div class="modal-inner">
+                <a href="#" class='close-modal'>&Cross;</a>
+                <p class='win-loss'>You Won 🎉️</p>
+                <a href="#" class='btn playagain'>Play Again <span>&olarr;</span></a>
+            </div>
+        </section>
+
+        <div class="overlay hidden"></div>
+
+</main>
+</body>
+<script src="Guess The Number.js"></script>
+</html>
+

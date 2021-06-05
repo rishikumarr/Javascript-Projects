@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="Responsive slider.css">
+    <title>Image Slider</title>
+</head>
+<body class='flex'>
+    <main class='flex'>
+        <div class="arrow" data-arrow-left><i class="fas fa-arrow-left"></i></div>
+            <div class="slider-container flex">
+
+                <div class='slider loading' style="transform: translateX(0%)" data-slider>
+
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+                <div class="slide flex"></div>
+            
+                </div>
+            </div>
+        <div class="arrow right" data-arrow-right=""><i class="fas fa-arrow-right"></i></div>
+    </main>
+    <template data-sample-slide>
+        <div class="slide flex">
+            <img src="" alt="" class='slide-image'>
+            <div class="slide-content flex">
+                <div class="slide-content-top flex">
+                    <h4 class='slide-content-heading'></h4>
+                    <p class="genre"></p>
+                </div>
+                <p class='slide-content-overview'></p>
+                <button class='btn know-more'>More</button>
+            </div>
+        </div>
+    </template>
+</body>
+<script src="Responsive slider.js"></script>
+</html>

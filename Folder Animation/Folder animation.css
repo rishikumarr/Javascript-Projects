@@ -1,0 +1,214 @@
+/* Look Good in Chrome  */
+
+*,*::before,*::after{
+    margin :0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryBlack : #1e2022;
+    --secondaryBlack : #22262f;
+    --dark : #0096c7;
+    --light : #00b4d8;
+    --bodyBackground : #caf0f8;
+    --containerBackground : #90e0ef;
+    --testing : 1px solid white;
+    --folderWidth : 13em;
+    --folderHeight : 10em;
+    --borderRad1 : 3em;
+    --borderRad2 : 1.5em;
+    --borderRad3 : 1em;
+    --paperColor :rgba(224, 224, 224,0.5);
+    --transition : 0.3s;
+    --insetShadow :inset 0px 0px 10px rgba(0,0,0,0.6);
+    --spanW-H : 4em;
+    --gap : 1em;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bodyBackground);
+    transition: var(--transition);
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    flex-direction: column;
+    width: 60%;
+    max-width: 45em;
+    min-width: 35em;
+    height: 40em;
+    background-color: var(--containerBackground);
+    /* border : var(--testing); */
+    border-radius: var(--borderRad1);
+    padding: 2em;
+    gap : var(--gap);
+    perspective: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+.subcontainer{
+    width: 100%;
+    /* border : var(--testing); */
+    flex : 8;
+}
+.folder{
+    width: var(--folderWidth);
+    height: var(--folderHeight);
+    background-color: var(--dark);
+    border-radius: var(--borderRad2);
+    position: relative;
+    cursor: pointer;
+    transform: translateY(20%) rotateY(0deg);
+    transition: var(--transition);
+    /* border : var(--testing); */
+}
+
+.folder.spin{
+    animation: spin 0.5s ease-in 0.1s alternate-reverse;
+}
+
+@keyframes spin{
+    0%{
+        transform: translateY(20%) scale(1) rotateY(0deg);
+    }
+    35%{
+        transform: translateY(20%) scale(0.6) rotateY(60deg);
+    }
+    65%{
+        transform: translateY(20%) scale(0.3) rotateY(120deg);
+    }
+    98%{
+        transform: translateY(20%) scale(1.2) rotateY(175deg);
+    }
+    100%{
+        transform: translateY(20%) scale(1) rotateY(180deg);
+    }
+}
+
+.folder:hover{
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+    transform: translateY(0%) scale(1.05);
+}
+
+.folder:hover .folder-front{
+    transform:skew(-8deg) scaleY(.9) translateY(12px) translateX(2%);
+}
+
+.folder::before{
+    content: "";
+    position: absolute;
+    height: 2.5em;
+    width: 5em;
+    top:-10%;
+    left :0;
+    background-color: var(--dark);
+    /* border :var(--testing); */
+    border-radius: 1em 1em 0 0;
+    transition: var(--transition);
+}
+
+.folder-front{
+    width: var(--folderWidth);
+    height: calc(var(--folderHeight) - 1em);
+    background-color: var(--light);
+    /* border : var(--testing); */
+    border-radius: 1.5em 1.5em 1em 1em;
+    transform: translateY(15%);
+    transform-origin: bottom;
+    transition: var(--transition);
+}
+
+.paper{
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    left : 50%;
+    background-color: var(--paperColor);
+    /* background-color: rgba(255, 98, 0, 0.2); */
+    border-radius: var(--borderRad3) ;
+    transform: translateX(-50%) skew(-2deg) translateY(20%);
+    transition: var(--transition);
+}
+
+.folder:hover .one{
+    transform: translateX(-50%) skew(-2deg) translateY(4px);
+}
+
+.folder:hover .two{
+    transform: translateX(-47%) skew(-4deg) translateY(7px);
+}
+
+.folder:hover .three{
+    transform: translateX(-44%) skew(-6deg) translateY(12px);
+}
+
+.palette-container{
+    width: 100%;
+    flex : 2;
+    gap : var(--gap);
+    justify-content: space-evenly;
+    /* border : var(--testing); */
+}
+
+span{
+    /* border : var(--testing); */
+    width: var(--spanW-H);
+    height: var(--spanW-H);
+    border-radius: 50%;
+    box-shadow: var(--insetShadow);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+span:hover{
+    transform: scale(1.05);
+}
+
+#blue{
+    /* border : var(--testing); */
+    background-image: linear-gradient(to right,#0096c7 50%,#00b4d8 50%);
+}
+
+#black{
+    /* border : var(--testing); */
+    background-image: linear-gradient(to right,#1e2022 50%,#292c35 50%);
+}
+
+#green{
+    /* border : var(--testing); */
+    background-image: linear-gradient(to right,#248277 50%,#358f80 50%);
+}
+
+#yellow{
+    /* border : var(--testing); */
+    background-image: linear-gradient(to right,#FF871F 50%,#FF9233 50%);
+}
+
+#rose{
+    /* border : var(--testing); */
+    background-image: linear-gradient(to right,#8534c3 50%,#9d4edd 50%);
+}
+
+
+@media only screen and (max-width:700px){
+    :root{
+        --folderWidth : 10em;
+        --folderHeight :8em;
+    }
+}
+
+

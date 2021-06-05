@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="digitalclock.css">
+    <link rel="stylesheet" href="Digital clock-12hrs.css">
+    <title>Digital Clock</title>
+</head>
+<body class='flex'>
+    <div class="container grid">
+
+        <div class="wrapper flex">
+            <span class="normal flex" data-hour>12</span>
+            <span class="glowing flex" data-hour-glow>hr's</span>
+        </div> 
+
+        <div class="wrapper flex">
+            <span class="normal flex" data-minute>02</span>
+            <span class="glowing flex" data-minute-glow>min's</span>
+        </div>
+
+        <div class="wrapper flex">
+            <span class="normal flex" data-second>10</span>
+            <span class="glowing flex" data-second-glow>sec's</span>
+        </div>
+
+        <div class="wrapper flex">
+            <span class="flex ampm" data-amPm>AM</span>
+        </div>
+
+    </div>
+</body>
+<script src="Digital clock-12hrs.js"></script>
+</html>

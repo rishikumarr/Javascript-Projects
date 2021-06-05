@@ -1,0 +1,83 @@
+*::before,*::after{
+    margin :0;
+    padding :0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+:root{
+    --primaryColor : rgb(30,32,34);
+    --primaryFc: #e0e0e0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b3af6;
+}
+
+.ripple{
+    background-color: var(--primaryColor);
+    border: none;
+    padding: 1em 2em;
+    color :var(--primaryFc);
+    font-size: 2em;
+    border-radius: .5em;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple:hover{
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,.5);
+}
+
+.ripple .circle{
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    top :50%;
+    left :50%;
+    border-radius: 50%;
+    background-color:rgb(224, 224, 224);
+    transform: translate(-50%,-50%) scale(0);
+    animation: ripple 0.5s ease-out;
+}
+
+.ripple .circle::before{
+    content: "";
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    top :50%;
+    left :50%;
+    border-radius: 50%;
+    background-color:rgb(224, 224, 224);
+    transform: translate(-50%,-50%) scale(0);
+    animation: ripple 0.5s ease-out 0.1s;
+}
+
+.ripple:focus{
+  outline : none;
+  }
+
+.ripple:active{
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.5);
+    outline : none;
+    transform : scale(0.98);
+}
+
+@keyframes ripple{
+    to{
+        transform: translate(-50%,-50%) scale(3);
+        opacity: 0;
+    }
+}
